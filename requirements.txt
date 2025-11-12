@@ -1,0 +1,7 @@
+feedparser
+beautifulsoup4
+requests
+html2text
+google-auth
+google-auth-oauthlib
+google-auth-httplib2

@@ -1,0 +1,20 @@
+{
+  "email": {
+    "sender": "hindafinga@gmail.com",
+    "receiver": "zidaneinho@gmail.com",
+    "app_password": "oygf jthy qoiv fejk"
+  },
+  "sources": [
+    "https://awesomeneuron.substack.com/feed",
+    "https://substack.com/@tomyeh/rss",
+    "https://byhand.ai/feed",
+    "https://helloaimin.substack.com/feed",
+    "https://codingwithintelligence.com/feed",
+    "https://substack.com/@pauliusztin/rss",
+    "https://theengineeringmanager.substack.com/feed",
+    "https://ruben.substack.com/feed",
+    "https://jamwithai.substack.com/feed",
+    "https://newsletter.artofsaience.com/feed",
+    "https://thesignal.substack.com/feed"
+  ]
+}
