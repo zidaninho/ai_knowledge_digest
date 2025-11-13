@@ -72,7 +72,7 @@ def main():
 
     # Nutze GitHub Actions Secrets, falls vorhanden
     sender = os.getenv("EMAIL_USER", config["email"]["sender"])
-    receiver = config["email"]["receiver"]
+    receiver = os.getenv("EMAIL_RECEIVER", config["email"]["receiver"])
     password = os.getenv("EMAIL_PASS", config["email"]["app_password"])
 
     new_articles, updated_cache = fetch_feeds(config["sources"], cache)
