@@ -26,6 +26,7 @@ jobs:
       - name: Run AI Knowledge Digest
         env:
           EMAIL_USER: ${{ secrets.EMAIL_USER }}
+          EMAIL_RECEIVER: ${{ secrets.EMAIL_RECEIVER }}
           EMAIL_PASS: ${{ secrets.EMAIL_PASS }}
         run: |
           echo "Starte täglichen AI Digest..."
