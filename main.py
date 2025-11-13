@@ -1,4 +1,7 @@
-import feedparser, json, smtplib
+import feedparser
+import json
+import smtplib
+import os
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from datetime import date
@@ -66,14 +69,17 @@ def send_email(sender, receiver, password, articles):
 def main():
     config = load_json(CONFIG_FILE)
     cache = load_json(CACHE_FILE)
+
+    # Nutze GitHub Actions Secrets, falls vorhanden
+    sender = os.getenv("EMAIL_USER", config["email"]["sender"])
+    receiver = config["email"]["receiver"]
+    password = os.getenv("EMAIL_PASS", config["email"]["app_password"])
+
     new_articles, updated_cache = fetch_feeds(config["sources"], cache)
+
     if new_articles:
-        send_email(
-            config["email"]["sender"],
-            config["email"]["receiver"],
-            config["email"]["app_password"],
-            new_articles
-        )
+        send_email(sender, receiver, password, new_articles)
+
     save_json(CACHE_FILE, updated_cache)
 
 if __name__ == "__main__":
